@@ -2,12 +2,13 @@ import css from './ContactList.module.css';
 
 import Contact from '../Contact/Contact.jsx'
 import {useSelector, useDispatch} from 'react-redux';
-import {deleteContact, selectContacts} from '../../redux/contactsSlice.js';
+import {selectFilteredContacts} from '../../redux/contactsSlice.js';
+import { deleteContact } from '../../redux/contactsOps.js';
 import {selectNameFilter} from '../../redux/filtersSlice.js';
 
 export default function ContactList() {
 
-    const contacts = useSelector(selectContacts);
+    const contacts = useSelector(selectFilteredContacts);
     const search = useSelector(selectNameFilter);
     const dispatch = useDispatch();
 
