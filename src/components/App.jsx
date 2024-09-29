@@ -1,11 +1,9 @@
-import css from './App.module.css'
-
-import ContactForm from '../ContactForm/ContactForm.jsx';
-import SearchBox from '../SearchBox/SearchBox.jsx';
-import ContactList from '../ContactList/ContactList.jsx';
+import ContactForm from '../components/ContactForm/ContactForm.jsx';
+import SearchBox from '../components/SearchBox/SearchBox.jsx';
+import ContactList from '../components/ContactList/ContactList.jsx';
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import { fetchContacts } from '../../redux/contactsOps.js';
+import { fetchContacts } from '../redux/contacts/operations.js';
 
 export default function App() {
 
@@ -17,7 +15,7 @@ export default function App() {
     
 
     return (
-            <div className={css.app}>
+            <div>
                 <h1>Phonebook</h1>
                 <ContactForm />
                 <SearchBox />
