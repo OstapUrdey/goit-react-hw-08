@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 import {Route, Routes} from 'react-router-dom';
 
 import {fetchContacts} from '../redux/contacts/operations.js';
+import Layout from './Layout/Layout.jsx';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage.jsx'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage/ContactsPage.jsx'));
@@ -18,6 +19,7 @@ export default function App() {
 
     return (
     <div className="container">
+        <Layout />
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
                 <Route path="/" element={<HomePage />} />

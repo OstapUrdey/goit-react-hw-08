@@ -1,14 +1,50 @@
-.nav {
+/* Layout.module.css */
+.container {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f8ff; /* Світло-блакитний фон */
+    font-family: Arial, sans-serif; /* Вибір шрифта */
 }
 
-.link {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
+nav {
+    background-color: #4a90e2; /* Темно-блакитний фон навігації */
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тінь навігації */
 }
 
-.link:hover {
-    color: #0056b3;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white; /* Білий колір тексту */
+    text-decoration: none; /* Без підкреслення */
+    font-weight: bold; /* Жирний текст */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Підкреслення при наведенні */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Максимальна ширина контенту */
+    margin: 20px auto; /* Центрування */
+    background-color: white; /* Білий фон для контенту */
+    border-radius: 8px; /* Закруглені кути */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тінь для контенту */
 }
