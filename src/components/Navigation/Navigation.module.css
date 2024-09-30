@@ -1,15 +1,29 @@
-.nav {
+.navList {
+    list-style: none;
     display: flex;
     gap: 2rem;
+    padding: 0;
+    margin: 0;
 }
 
-.link {
+.navItem {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.navLink {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
 
-.link:hover {
-    color: rgba(255, 255, 255, 0.8);
+.navLink:hover {
+    background-color: #0056b3;
+    color: #f8f9fa;
+}
+
+.navLink:active {
+    background-color: #004085;
 }
