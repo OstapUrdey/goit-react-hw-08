@@ -31,6 +31,7 @@ export const deleteContact = createAsyncThunk(
     "contacts/deleteContact",
     async (contactId, thunkAPI) => {
         try {
+            console.log("Authorization header:", axios.defaults.headers.common.Authorization);
             const res = await axios.delete(`/contacts/${contactId}`);
             return res.data;
         } catch (error) {
