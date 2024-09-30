@@ -11,12 +11,6 @@ export default function Navigation() {
                 <li className={css.navItem}>
                     <NavLink className={css.navLink} to="/contacts">Contacts</NavLink>
                 </li>
-                <li className={css.navItem}>
-                    <NavLink className={css.navLink} to="/login">Login</NavLink>
-                </li>
-                <li className={css.navItem}>
-                    <NavLink className={css.navLink} to="/register">Register</NavLink>
-                </li>
             </ul>
         </nav>
     );
