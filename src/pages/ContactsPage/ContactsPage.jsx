@@ -1,5 +1,16 @@
-// import css from './ContactsPage.module.css';
+import css from './ContactsPage.module.css';
+import PageTitle from '../../components/PageTitle/PageTitle.jsx';
+import ContactForm from '../../components/ContactForm/ContactForm.jsx';
+import ContactList from '../../components/ContactList/ContactList.jsx';
+import SearchBox from '../../components/SearchBox/SearchBox.jsx';
 
 export default function ContactsPage() {
-    
+    return (
+        <div className={css.container}>
+            <PageTitle>Phonebook</PageTitle>
+            <ContactForm />
+            <SearchBox />
+            <ContactList />
+    </div>
+);
 }
