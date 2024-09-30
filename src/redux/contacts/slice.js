@@ -2,7 +2,7 @@ import {createSlice, createSelector} from '@reduxjs/toolkit';
 import {addContact, deleteContact, fetchContacts} from '../contacts/operations.js';
 import { selectNameFilter } from '../filters/slice.js';
 
-const contactsSlise = createSlice({
+const contactsSlice = createSlice({
     name: "contacts",
     initialState: {
         items: [],
@@ -52,7 +52,7 @@ const contactsSlise = createSlice({
     },
 });
 
-export default contactsSlise.reducer;
+export default contactsSlice.reducer;
 
 export const selectContacts = (state) => state.contacts.items;
 
