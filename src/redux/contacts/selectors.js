@@ -1,4 +1,4 @@
-import {selectNameFilter} from '../filters/slice.js';
+import {selectNameFilter} from '../filters/selectors.js';
 import {createSelector} from '@reduxjs/toolkit';
 
 
