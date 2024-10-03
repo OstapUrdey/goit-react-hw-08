@@ -1,8 +1,9 @@
 // import css from './LoginForm.module.css';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useDispatch } from 'react-redux';
-import { logIn } from '../../redux/auth/operations.js';
+import {Formik, Form, Field, ErrorMessage} from 'formik';
+import {useDispatch, useSelector} from 'react-redux';
+import {logIn} from '../../redux/auth/operations.js';
 import * as Yup from 'yup';
+import { selectIsLoading } from '../../redux/auth/selectors.js';
 
 const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -11,8 +12,9 @@ const validationSchema = Yup.object({
 
 export default function LoginForm() {
     const dispatch = useDispatch();
+    const isLoading = useSelector(selectIsLoading);
 
-    const handleSubmit = (values, { resetForm }) => {
+    const handleSubmit = (values, {resetForm}) => {
         dispatch(logIn(values));
         resetForm();
     };
@@ -30,7 +32,7 @@ export default function LoginForm() {
                 <label>Password</label>
                     <Field type="password" name="password" />
                     <ErrorMessage name="password" component="div" />
-                <button type="submit">Login</button>
+                <button type="submit" disabled={isLoading}>Login</button>
             </Form>
         </Formik>
     );

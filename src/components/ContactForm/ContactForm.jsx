@@ -4,6 +4,7 @@ import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import {useDispatch} from 'react-redux';
 import { addContact } from '../../redux/contacts/operations.js';
+import toast from 'react-hot-toast';
 
 const validationSchema = Yup.object({
     name: Yup.string().min(3).max(50).required("Required"),
@@ -16,6 +17,7 @@ export default function ContactForm () {
 
     const handleSubmit = (values, {resetForm}) => {
         dispatch(addContact(values));
+        toast.success("Contact added successfully!")
         resetForm();
     };
 
