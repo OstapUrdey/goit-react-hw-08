@@ -4,21 +4,21 @@
 
 .navList {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .navItem {
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .navLink {
     text-decoration: none;
-    color: white;
+    color: #61dafb;
     transition: color 0.3s;
 }
 
 .navLink:hover {
-    color: #FFC107;
+    color: #21a1f1;
 }

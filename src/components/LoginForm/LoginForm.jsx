@@ -1,4 +1,4 @@
-// import css from './LoginForm.module.css';
+import css from './LoginForm.module.css';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import {useDispatch, useSelector} from 'react-redux';
 import {logIn} from '../../redux/auth/operations.js';
@@ -25,17 +25,17 @@ export default function LoginForm() {
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
         >
-            <Form>
-                <label>Email</label>
-                    <Field type="email" name="email" />
-                    <ErrorMessage name="email" component="div" />
-                <label>Password</label>
-                    <Field type="password" name="password" />
-                    <ErrorMessage name="password" component="div" />
-                <button type="submit" disabled={isLoading}>Login</button>
+            <Form className={css.form}>
+                <label className={css.label}>Email</label>
+                <Field type="email" name="email" className={css.input} />
+                <ErrorMessage name="email" component="div" className={css.error} />
+
+                <label className={css.label}>Password</label>
+                <Field type="password" name="password" className={css.input} />
+                <ErrorMessage name="password" component="div" className={css.error} />
+
+                <button type="submit" disabled={isLoading} className={css.button}>Login</button>
             </Form>
         </Formik>
     );
 }
-
-

@@ -13,6 +13,6 @@ export default function ContactsPage() {
             <ContactForm />
             <SearchBox />
             <ContactList />
-    </div>
-);
+        </div>
+    );
 }

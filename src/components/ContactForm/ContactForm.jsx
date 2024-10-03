@@ -27,18 +27,18 @@ export default function ContactForm () {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
     >
-        <Form>
-            <label>
+        <Form className={css.contactForm}>
+            <label className={css.label}>
                 Name
-                <Field name="name" type="text" />
+                <Field name="name" type="text" className={css.input} />
                 <ErrorMessage name="name" component="div" />
             </label>
-            <label>
+            <label className={css.label}>
                 Number
-                <Field name="number" type="text" />
+                <Field name="number" type="text" className={css.input} />
                 <ErrorMessage name="number" component="div" />
             </label>
-            <button type="submit">Add contact</button>
+            <button type="submit" className={css.button}>Add contact</button>
         </Form>
     </Formik>
     )

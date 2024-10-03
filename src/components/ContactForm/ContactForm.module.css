@@ -1,7 +1,32 @@
 .contactForm {
+    display: flex;
+    flex-direction: column;
     margin: 20px 0;
 }
 
-label {
-    font-weight: bold;
+.label {
+    margin-bottom: 8px;
+    color: white;
+}
+
+.input {
+    margin-bottom: 12px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #616161;
+    color: white;
+}
+
+.button {
+    padding: 10px;
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #21a1f1;
 }

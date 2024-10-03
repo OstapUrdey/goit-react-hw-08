@@ -1,4 +1,4 @@
-// import css from './RegistrationForm.module.css';
+import css from './RegistrationForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations.js';
@@ -24,17 +24,20 @@ export default function RegistrationForm() {
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
         >
-            <Form>
-                <label>Name</label>
-                    <Field type="text" name="name" />
-                    <ErrorMessage name="name" component="div" />
-                <label>Email</label>
-                    <Field type="email" name="email" />
-                    <ErrorMessage name="email" component="div" />
-                <label>Password</label>
-                    <Field type="password" name="password" />
-                    <ErrorMessage name="password" component="div" />
-                <button type="submit">Register</button>
+            <Form className={css.form}>
+                <label className={css.label}>Name</label>
+                <Field type="text" name="name" className={css.input} />
+                <ErrorMessage name="name" component="div" className={css.error} />
+
+                <label className={css.label}>Email</label>
+                <Field type="email" name="email" className={css.input} />
+                <ErrorMessage name="email" component="div" className={css.error} />
+
+                <label className={css.label}>Password</label>
+                <Field type="password" name="password" className={css.input} />
+                <ErrorMessage name="password" component="div" className={css.error} />
+
+                <button type="submit" className={css.button}>Register</button>
             </Form>
         </Formik>
     );

@@ -1,0 +1,9 @@
+.editContactForm {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.textField {
+    margin-bottom: 12px;
+}
