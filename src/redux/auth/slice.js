@@ -23,9 +23,11 @@ const authSlice = createSlice({
                 state.user = action.payload.user;
                 state.token = action.payload.token;
                 state.isLoggedIn = true;
+                state.isLoading = false;
             })
             .addCase(register.pending, (state) => {
                 state.isLoading = true;
+                state.isError = false;
             })
             .addCase(register.rejected, (state, action) => {
                 state.isLoading = false;
@@ -35,6 +37,7 @@ const authSlice = createSlice({
                 state.user = action.payload.user;
                 state.token = action.payload.token;
                 state.isLoggedIn = true;
+                state.isLoading = false;
             })
             .addCase(logIn.pending, (state) => {
                 state.isLoading = true;

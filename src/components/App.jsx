@@ -1,11 +1,11 @@
 import {useEffect, lazy, Suspense} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Route, Routes} from 'react-router-dom';
-import {fetchContacts} from '../redux/contacts/operations.js';
 import Layout from './Layout/Layout.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import RestrictedRoute from './RestrictedRoute.jsx';
 import {selectIsRefreshing} from '../redux/auth/selectors.js';
+import {refreshUser} from '../redux/auth/operations.js';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage.jsx'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage/ContactsPage.jsx'));
@@ -17,7 +17,7 @@ export default function App() {
     const isRefreshing = useSelector(selectIsRefreshing);
 
     useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
     }, [dispatch]);
 
     return isRefreshing ? (
